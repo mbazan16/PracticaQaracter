@@ -36,7 +36,7 @@ public class RegionDAO implements IDAO<Integer, Region> {
 	@Override
 	public void create(Region item) throws DAOException {
 		log.info("Method:[crear]");
-		log.debug("Parmetros:[Departamento element:" + item+"]");
+		log.debug("Parmetros:[Region element:" + item+"]");
 
 		try {
 			init();
@@ -65,7 +65,7 @@ public class RegionDAO implements IDAO<Integer, Region> {
 	@Override
 	public void update(Region item) throws DAOException {
 		log.info("Method:[actualizar]");
-		log.debug("Parmetros:[Departamento element:" + item+"]");
+		log.debug("Parmetros:[Region element:" + item+"]");
 
 		try {
 			init();
