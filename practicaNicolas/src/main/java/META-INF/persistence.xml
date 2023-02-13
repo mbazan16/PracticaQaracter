@@ -6,6 +6,7 @@
 	<persistence-unit name="practicaNicolas">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.evaluacion.practicaNicolas.entities.Region</class>
+		<class>com.evaluacion.practicaNicolas.entities.Pais</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/HR" />
