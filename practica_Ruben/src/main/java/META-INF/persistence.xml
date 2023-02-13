@@ -6,6 +6,7 @@
 	<persistence-unit name="practica_Ruben">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.ejemplo.practicaruben.entidades.Region</class>
+		<class>com.ejemplo.practicaruben.entidades.Pais</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
