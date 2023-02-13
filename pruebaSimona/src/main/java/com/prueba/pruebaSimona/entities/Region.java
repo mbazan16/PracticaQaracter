@@ -16,6 +16,7 @@ public class Region implements Serializable {
 
 	@Id
 	@Column(name="region_id")
+	@OneToMany(mappedBy = "regionId")
 	private int id;
 
 	@Column(name="region_name")
