@@ -43,13 +43,13 @@ public class RegionDAO implements IDAO<Integer, Region> {
 
 			try {
 				log.debug("[crear]Iniciamos transacción");
-				manager.getTransaction().begin();
+//				manager.getTransaction().begin();
 				manager.persist(item);
-				manager.getTransaction().commit();
+//				manager.getTransaction().commit();
 				log.debug("[crear]Commit - Creamos departamento");
 			} catch (Exception e) {
 				log.error("Error", e);
-				manager.getTransaction().rollback();
+//				manager.getTransaction().rollback();
 				log.debug("[crear]Rollback");
 				throw new DAOException(e);
 			}
@@ -72,14 +72,14 @@ public class RegionDAO implements IDAO<Integer, Region> {
 
 			try {
 				log.debug("[actualizar]Iniciamos transacción");
-				manager.getTransaction().begin();
+//				manager.getTransaction().begin();
 				Region region = findOne(item.getId());
 				region.setNombre(item.getNombre());
-				manager.getTransaction().commit();
+//				manager.getTransaction().commit();
 				log.debug("[actualizar]Commit - Creamos departamento");
 			} catch (Exception e) {
 				log.error("Error", e);
-				manager.getTransaction().rollback();
+//				manager.getTransaction().rollback();
 				log.debug("[actualizar]Rollback");
 				throw new DAOException(e);
 			}

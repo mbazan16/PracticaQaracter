@@ -23,6 +23,12 @@ public class Region implements Serializable {
 	
 	public Region() {
 	}
+	
+	public Region(int id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
 
 	public int getId() {
 		return id;
