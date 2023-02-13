@@ -33,14 +33,14 @@ class RegionDAOTest {
 	@Test
 	void testFindOne() {
 		RegionDAO reg = new RegionDAO();
-		assertEquals(2, region.findOne(2));
+		assertEquals(2, region.findOne(2).getId());
 	}
 
 	@Test
 	void testCreate() {
 		Region reg = new Region(5, "Africa");
 		region.create(reg);
-		assertEquals(5, region.findOne(5));
+		assertEquals(5, region.findOne(5).getId());
 	}
 
 	@Test
@@ -53,7 +53,7 @@ class RegionDAOTest {
 
 	@Test
 	void testDelete() {
-		region.delete(1000);
+		region.delete(5);
 		assertNull(region.findOne(5));
 	}
 
