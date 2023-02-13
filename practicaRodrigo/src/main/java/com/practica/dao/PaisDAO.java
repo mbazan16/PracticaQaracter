@@ -23,6 +23,14 @@ public class PaisDAO implements IDAO<String, Pais> {
 		init();
 		return manager.createNamedQuery("Pais.findAll", Pais.class).getResultList();
 	}
+	public List<Pais> findAllFromRegion(int regId) throws DAOException {
+		init();
+		String query = "SELECT p FROM Pais p WHERE p.region.id = :region";
+		List<Pais> ret = manager.createQuery(query, Pais.class).setParameter("region", regId)
+				.getResultList();
+		ret.stream().map(Pais::toString).forEach(log::info);
+		return ret;
+	}
 
 
 	@Override

@@ -28,6 +28,11 @@ class PaisDAOTest {
 		List<Pais> listPais = paisDAO.findAll();
 		assertTrue(!listPais.isEmpty());
 	}
+	@Test
+	void testFindAllFrom() throws DAOException {
+		List<Pais> listPais = paisDAO.findAllFromRegion(1);
+		assertTrue(!listPais.isEmpty());
+	}
 
 	@Test
 	void testFindOne() throws DAOException {
