@@ -10,31 +10,31 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.practica.dao.interfaces.IDAO;
-import com.practica.data.Region;
+import com.practica.data.Pais;
 import com.practica.exceptions.DAOException;
 
-public class RegionDAO implements IDAO<Integer, Region> {
-	private static final Logger log = LoggerFactory.getLogger(RegionDAO.class);
+public class PaisDAO implements IDAO<String, Pais> {
+	private static final Logger log = LoggerFactory.getLogger(PaisDAO.class);
 	private EntityManagerFactory factory;
 	private EntityManager manager;
 
 	@Override
-	public List<Region> findAll() throws DAOException {
+	public List<Pais> findAll() throws DAOException {
 		init();
-		return manager.createNamedQuery("Region.findAll", Region.class).getResultList();
+		return manager.createNamedQuery("Pais.findAll", Pais.class).getResultList();
 	}
 
 
 	@Override
-	public Region findOne(Integer key) throws DAOException {
+	public Pais findOne(String key) throws DAOException {
 		init();
-		return manager.find(Region.class, key);
+		return manager.find(Pais.class, key);
 	}
 
 	@Override
-	public void create(Region element) throws DAOException {
+	public void create(Pais element) throws DAOException {
 		log.info("Method:[crear]");
-		log.debug("Parmetros:[Region element:" + element + "]");
+		log.debug("Parmetros:[Pais element:" + element + "]");
 
 		try {
 			init();
@@ -44,7 +44,7 @@ public class RegionDAO implements IDAO<Integer, Region> {
 //				manager.getTransaction().begin();
 				manager.persist(element);
 //				manager.getTransaction().commit();
-				log.debug("[crear]Commit - Creamos region");
+				log.debug("[crear]Commit - Creamos pais");
 			} catch (Exception e) {
 				log.error("Error", e);
 				manager.getTransaction().rollback();
@@ -61,9 +61,9 @@ public class RegionDAO implements IDAO<Integer, Region> {
 	}
 
 	@Override
-	public void update(Region element) throws DAOException {
+	public void update(Pais element) throws DAOException {
 		log.info("Method:[update]");
-		log.debug("Parmetros:[Region element:" + element + "]");
+		log.debug("Parmetros:[Pais element:" + element + "]");
 
 		try {
 			init();
@@ -73,11 +73,12 @@ public class RegionDAO implements IDAO<Integer, Region> {
 //				manager.getTransaction().begin();
 //				manager.persist(element);
 
-				Region dep = findOne(element.getId());
-				dep.setNombre(element.getNombre());
+				Pais pais = findOne(element.getId());
+				pais.setNombre(element.getNombre());
+//				pais.setRegion(pais.getRegion());
 
 //				manager.getTransaction().commit();
-				log.debug("[update]Commit - Actualizamos region");
+				log.debug("[update]Commit - Actualizamos pais");
 			} catch (Exception e) {
 				log.error("Error", e);
 //				manager.getTransaction().rollback();
@@ -94,9 +95,9 @@ public class RegionDAO implements IDAO<Integer, Region> {
 	}
 
 	@Override
-	public void delete(Integer key) throws DAOException {
+	public void delete(String key) throws DAOException {
 		log.info("Method:[delete]");
-		log.debug("Parmetros:[Region element:" + key + "]");
+		log.debug("Parmetros:[Pais element:" + key + "]");
 
 		try {
 			init();
@@ -107,7 +108,7 @@ public class RegionDAO implements IDAO<Integer, Region> {
 				manager.remove(findOne(key));
 
 //				manager.getTransaction().commit();
-				log.debug("[delete]Commit - Borrar region");
+				log.debug("[delete]Commit - Borrar pais");
 			} catch (Exception e) {
 				log.error("Error", e);
 //				manager.getTransaction().rollback();
