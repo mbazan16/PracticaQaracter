@@ -60,11 +60,11 @@ RegionDAO regDAO;
 		Region region = new Region(5,"Region X");
 		regDAO.create(region);
 		//Region region = regDAO.findOne(1000);
-		assertEquals("Depto X", regDAO.findOne(1000).getNombreRegion());
+		assertEquals("Depto X", regDAO.findOne(5).getNombreRegion());
 		
 		region.setNombreRegion("Depto X");
 		regDAO.update(region);
-		assertEquals("Depto B", regDAO.findOne(1000).getNombreRegion());
+		assertEquals("Depto B", regDAO.findOne(5).getNombreRegion());
 	}
 	
 	@Test

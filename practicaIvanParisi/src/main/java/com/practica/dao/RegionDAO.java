@@ -83,7 +83,7 @@ public class RegionDAO implements IDAO<Integer, Region> {
 
 	private void init() {
 		if (factory == null)
-			factory = Persistence.createEntityManagerFactory("jpa1");
+			factory = Persistence.createEntityManagerFactory("practicaIvanParisi");
 		if (manager == null)
 			manager = factory.createEntityManager();
 	}
