@@ -57,9 +57,9 @@ class RegionDAOTest {
 		regionDAO.create(region);
 		assertEquals("Atlantida", regionDAO.findOne(10).getRegionNombre());
 		
-		region.setRegionNombre("Depto B");
+		region.setRegionNombre("NINO");
 		regionDAO.update(region);
-		assertEquals("Depto B", regionDAO.findOne(10).getRegionNombre());
+		assertEquals("NINO", regionDAO.findOne(10).getRegionNombre());
 	}
 	
 	@Test

@@ -6,6 +6,7 @@
 	<persistence-unit name="LucioAlonso">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>com.practica.lucioalonso.entities.Region</class>
+		<class>com.practica.lucioalonso.entities.Country</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url"
